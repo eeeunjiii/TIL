@@ -8,6 +8,6 @@
 
 ## 2023-03-28
 - git clone을 이용하여 저장소 복제
-- .git, git init
+- .git, `git init`
 
 ## 2023-08-29
