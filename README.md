@@ -19,6 +19,6 @@
 ## 2023-09-09
 - Servlet: 상태 정보 유지 기술
 
-
 ## 2023-12-21
 - Spring: 의존성 주입
+- Spring: @EnableWebMvc
