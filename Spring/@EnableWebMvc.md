@@ -22,7 +22,6 @@ public class MyConfiguration {
 }
 ```
 - 가져온 Configuration을 사용자 정의를 하려면 ` WebMvcConfigurer` 인터페이스를 구현하고 각각의 메소드들을 오버라이딩한다.
-- 
 
 ```java
 @Configuration
