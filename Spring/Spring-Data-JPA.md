@@ -1,7 +1,7 @@
 > JPA는 객체-관계 매핑(ORM)을 위한 표준 명세인 인터페이스를 의미한다. 자바 어플리케이션에서 관계형 데이터베이스를 사용하는 방식을 정의한 인터페이스와 어노테이션의 표준 집합을 정의한다. 즉, 특정 기능을 위한 라이브러리가 아니라 인터페이스이다.
 
-Spring Data JPA는 JPA 기반 어플리케이션 개발을 보다 간편하게 만드는 라이브러리, 프레임워크이다. JPA에서는 `EntityManager`를 사용하지만 Spring Data JPA에서는 `Repository`라는 인터페이스를 제공한다.
-> 
+> Spring Data JPA는 JPA 기반 어플리케이션 개발을 보다 간편하게 만드는 라이브러리, 프레임워크이다. JPA에서는 `EntityManager`를 사용하지만 Spring Data JPA에서는 `Repository`라는 인터페이스를 제공한다.
+
 
 ```java
 public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, MemberRepository {
