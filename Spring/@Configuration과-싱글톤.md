@@ -56,3 +56,7 @@ public class ConfigurationSingletonTest {
 - '싱글톤 방식의 주의점'에서 `TestConfig`에는 `@Configuration`이 붙지 않아도 동일한 객체를 반환했다.
   - 그 이유는 `StatefulService`를 한 번만 호출하여 그에 대한 빈이 하나만 만들어졌기 때문에 조회할 때에도 생성된 하나의 빈 객체를 반환한 것이다.
   - `@Configuration`을 붙여야 맞는 것이다.
+
+
+- 스프링에서는 `@Configuration` 어노테이션이 붙은 `AppConfig.class`를 `AnnotationConfigApplicationContext`에 넘겨주면 `AppConfig`를 스프링 빈으로 등록하는 것이 아니라 CGLIB 바이트 조작 라이브러리를 통해 조작된 `AppConfig`를 스프링 빈으로 등록한다.
+  - `@Bean` 어노테이션만 붙이면 스프링 빈으로 등록은 되지만, 싱글톤을 보장하지는 않는다.
