@@ -67,3 +67,54 @@ private void printHeader(HttpServletRequest req) {
     System.out.println();
 }
 ```
+```java
+private void printHeaderUtils(HttpServletRequest req) {
+    
+    System.out.println("--- Header 편의 조회 start ---");
+    System.out.println("[Host 편의 조회]");
+    System.out.println("req.getServerName = "+req.getServerName());
+    System.out.println("req.getServerPort = "+req.getServerPort());
+    System.out.println();
+
+    System.out.println("[Accept-Language 편의 조회]");
+    req.getLocales().asIterator()
+            .forEachRemaining(locale -> System.out.println("locale = " + locale));
+    System.out.println("req.getLocal = "+req.getLocale());
+    System.out.println();
+
+    System.out.println("[Cookie 편의 조회]");
+    if(req.getCookies() != null) {
+        for(Cookie cookie:req.getCookies()) {
+            System.out.println(cookie.getName()+" : "+cookie.getValue());
+        }
+    }
+    System.out.println();
+
+    System.out.println("[Content 편의 조회]");
+    System.out.println("req.getContentType = "+req.getContentType());
+    System.out.println("req.getContentLength = "+req.getContentLength());
+    System.out.println("req.getCharacterEncoding = "+req.getCharacterEncoding());
+    System.out.println("--- Header 편의 조회 end ---");
+    System.out.println();
+}
+```
+```java
+private void printEtc(HttpServletRequest req) {
+    System.out.println("--- 기타 조회 start ---");
+
+    System.out.println("[Remote 정보]");
+    System.out.println("req.getRemoteHost = "+req.getRemoteHost());
+    System.out.println("rq.getRemoteAddr = "+req.getRemoteAddr());
+    System.out.println("req.getRemotePort = "+req.getRemotePort());
+    System.out.println();
+
+    System.out.println("[Locale 정보]");
+    System.out.println("req.getLocalName = "+req.getLocalName());
+    System.out.println("req.getLocalAddr = "+req.getLocalAddr());
+    System.out.println("req.getLocalPort = "+req.getLocalPort());
+
+    System.out.println("--- 기타 조회 end ---");
+    System.out.println();
+}
+```
+- 이때 기타 정보는 HTTP 메시지의 정보는 아니다.
