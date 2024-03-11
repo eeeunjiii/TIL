@@ -108,3 +108,12 @@ public class MvcMemberSaveServlet extends HttpServlet {
 - 이전에 한 것처럼 `<%=req.getAttribute("member")%>` 로 모델에 저장한 member 객체를 꺼낼 수 있지만 복잡하다.
 - JSP에서는 `${   }` 문법을 제공한다. request의 attribute에 담긴 데이터를 쉽게 조회할 수 있다.
 - `${   }` 안에 있는 `member`는 앞서 지정한 Attribute의 키 값과 매핑된다.
+
+
+위의 컨트롤러는 다음과 같은 단점을 갖고 있다.
+- View로 이동하는 코드가 중복된다.
+- ```java RequestDispatcher dispatcher = req.getRequestDispatcher(viewPath);
+        dispatcher.forward(req, resp);```
+- ViewPath에 중복이 있다.
+- 공통처리가 어렵다. 공통 기능을 메소드로 따로 작성할 수 있지만 항상 해당 메소드를 호출해야 하기 때문에 문제가 해결되지는 않는다. 
+- 이러한 문제점은 공통 기능을 처리해주는 Front Controller로 해결할 수 있다.
