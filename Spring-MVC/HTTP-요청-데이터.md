@@ -1,7 +1,7 @@
 ### HTTP 요청 데이터
 - 클라이언트에서 서버로 HTTP 요청 메시지를 전달하는 방법에는 세 가지가 있다.
 1. GET - 쿼리 파라미터
-   - `/url**username=hello&age=20**`
+   - `/url?username=hello&age=20`
    - 메시지 바디 없이 URL의 쿼리 파라미터에 데이터를 포함해서 전달한다.
    - 검색, 필터, 페이징 등에서 많이 사용하는 방식이다.
 2. POST - HTML Form
